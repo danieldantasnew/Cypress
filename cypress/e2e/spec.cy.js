@@ -65,6 +65,7 @@ describe('teste', () => {
     cy.wait(800);
     cy.get('#rightClickBtn').rightclick()
   });
+
   it('Ir para links e verificar se os links estão funcionando', ()=>{
     cy.get(':nth-child(1) > .element-list > .menu-list > #item-5').click();
     cy.get('#simpleLink').click();
@@ -84,5 +85,64 @@ describe('teste', () => {
     cy.get('#forbidden').click();
     cy.wait(600);
     cy.get('#invalid-url').click();
+  });
+
+  it('Selecionar a opção forms e preencher os dados', ()=>{
+    cy.get(':nth-child(2) > .group-header > .header-wrapper').click();
+    cy.wait(200);
+    cy.get(':nth-child(2) > .element-list > .menu-list > #item-0 > .text').click();
+    cy.get('#firstName').type('Daniel Teste 1');
+    cy.get('#lastName').type('Dantass');
+    cy.get('#userEmail').type('teste@hotmail.com');
+    cy.get('#genterWrapper > .col-md-9 > :nth-child(1) > .custom-control-label').click();
+    cy.get('#genterWrapper > .col-md-9 > :nth-child(2) > .custom-control-label').click();
+    cy.get('#genterWrapper > .col-md-9 > :nth-child(3) > .custom-control-label').click();
+    cy.get('#userNumber').type('8399999999');
+    cy.get('.subjects-auto-complete__value-container').type('testestestsetes');
+    cy.get('.subjects-auto-complete__value-container').click();
+    cy.get('#hobbiesWrapper > .col-md-9 > :nth-child(1) > .custom-control-label').click();
+    cy.get('#hobbiesWrapper > .col-md-9 > :nth-child(2) > .custom-control-label').click();
+    cy.get('#hobbiesWrapper > .col-md-9 > :nth-child(3) > .custom-control-label').click();
+    cy.get('#currentAddress').type('Algum texto para não ficar em branco');
+    cy.get('#state > .css-yk16xz-control > .css-1wy0on6 > .css-tlfecz-indicatorContainer').click();
+    cy.get('#react-select-3-option-0').click();
+    cy.get('#city > .css-yk16xz-control > .css-1wy0on6 > .css-tlfecz-indicatorContainer').click();
+    cy.get('#react-select-4-option-0').click();
+  });
+
+  it('Selecionar Alerts, Frame & Windows e testar se o Browser Windows está funcionando', ()=>{
+    cy.get(':nth-child(3) > .group-header > .header-wrapper > .header-text').click();
+    cy.get(':nth-child(3) > .element-list > .menu-list > #item-0 > .text').click();
+    cy.get('#tabButton').click();
+    cy.get('#windowButton').click();
+    cy.get('#messageWindowButton').click();
+  });
+
+  it('Verifica se o botão Frames está funcionando', ()=>{
+    cy.get(':nth-child(3) > .group-header > .header-wrapper > .header-text').click();
+	  cy.get(':nth-child(3) > .element-list > .menu-list > #item-2').click();
+  });
+
+  it('Verifica se o botão Nest Frames está funcionando', ()=>{
+    cy.get(':nth-child(3) > .group-header > .header-wrapper > .header-text').click();
+	  cy.get(':nth-child(3) > .element-list > .menu-list > #item-3').click();
+  });
+
+  // it('Selecionar Alerts, Frame & Windows e testar se o Alerts está funcionando', ()=>{
+  //   cy.get(':nth-child(3) > .group-header > .header-wrapper > .header-text').click();
+  //   cy.get(':nth-child(3) > .element-list > .menu-list > #item-1').click();
+  //   cy.get('#alertButton').click();
+  //   cy.get('#alertButton').click();
+  //   cy.get('#confirmButton').click();
+  //   cy.get('#promtButton').click();
+  // });DEIXAR COMO ÚLTIMOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  it('Selecionar Alerts, Frame & Windows e testar se o Modal Dialogs está funcionando', ()=>{
+    cy.get(':nth-child(3) > .group-header > .header-wrapper > .header-text').click();
+    cy.get(':nth-child(3) > .element-list > .menu-list > #item-4').click();
+    cy.get('#showSmallModal').click();
+    cy.get('#closeSmallModal').click();
+    cy.get('#showLargeModal').click();
+    cy.get('#closeLargeModal').click();
   });
 })
