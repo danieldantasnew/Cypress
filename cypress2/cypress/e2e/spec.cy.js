@@ -5,11 +5,11 @@ describe('teste', () => {
     });
     
     it('Selecionar Alerts, Frame & Windows e testar se o Alerts está funcionando', ()=>{
-    cy.get(':nth-child(3) > .group-header > .header-wrapper > .header-text').click();
-    cy.get(':nth-child(3) > .element-list > .menu-list > #item-1').click();
-    cy.get('#alertButton').click();
-    cy.get('#alertButton').click();
-    cy.get('#confirmButton').click();
+        cy.get(':nth-child(3) > :nth-child(1) > .avatar').click();
+        cy.get(':nth-child(3) > .element-list > .menu-list > #item-1').click();
+        cy.get('#alertButton').click();
+        cy.get('#alertButton').click();
+        cy.get('#confirmButton').click();
     });
 
     it('Selecionar a opção forms e preencher os dados', ()=>{
@@ -35,7 +35,7 @@ describe('teste', () => {
         cy.get('#react-select-4-option-0').click();
     });
     
-      it('Selecionar Alerts, Frame & Windows e testar se o Browser Windows está funcionando', ()=>{
+    it('Selecionar Alerts, Frame & Windows e testar se o Browser Windows está funcionando', ()=>{
         cy.get(':nth-child(3) > .group-header > .header-wrapper > .header-text').click();
         cy.get(':nth-child(3) > .element-list > .menu-list > #item-0 > .text').click();
         cy.get('#tabButton').click();
