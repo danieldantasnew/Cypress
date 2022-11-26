@@ -128,15 +128,6 @@ describe('teste', () => {
 	  cy.get(':nth-child(3) > .element-list > .menu-list > #item-3').click();
   });
 
-  // it('Selecionar Alerts, Frame & Windows e testar se o Alerts está funcionando', ()=>{
-  //   cy.get(':nth-child(3) > .group-header > .header-wrapper > .header-text').click();
-  //   cy.get(':nth-child(3) > .element-list > .menu-list > #item-1').click();
-  //   cy.get('#alertButton').click();
-  //   cy.get('#alertButton').click();
-  //   cy.get('#confirmButton').click();
-  //   cy.get('#promtButton').click();
-  // });DEIXAR COMO ÚLTIMOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
   it('Selecionar Alerts, Frame & Windows e testar se o Modal Dialogs está funcionando', ()=>{
     cy.get(':nth-child(3) > .group-header > .header-wrapper > .header-text').click();
     cy.get(':nth-child(3) > .element-list > .menu-list > #item-4').click();
@@ -192,25 +183,110 @@ describe('teste', () => {
     cy.get('#nav > :nth-child(3) > a').trigger('mouseover');
   });
 
-  // it('Selecionar Widgets e depois em Select Menu e testar se a opção Select value funciona', ()=>{
-  //   cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
-  //   cy.get(':nth-child(4) > .element-list > .menu-list > #item-8').click();
-  //   cy.get('#withOptGroup > .css-yk16xz-control > .css-1hwfws3').click();
-  //   cy.get('#react-select-5-option-0-0').click();
-  //   cy.wait(600);
-  //   cy.get('#withOptGroup > .css-yk16xz-control > .css-1hwfws3').click();
-  //   cy.get('#react-select-5-option-0-1').click();
-  //   cy.wait(600);
-  //   cy.get('#withOptGroup > .css-yk16xz-control > .css-1hwfws3').click();
-  //   cy.get('#react-select-5-option-1-0').click();
-  //   cy.wait(600);
-  //   cy.get('#withOptGroup > .css-yk16xz-control > .css-1hwfws3').click();
-  //   cy.get('#react-select-5-option-1-1').click();
-  //   cy.wait(600);
-  //   cy.get('#withOptGroup > .css-yk16xz-control > .css-1hwfws3').click();
-  //   cy.get('#react-select-5-option-2').click();
-  //   cy.wait(600);
-  //   cy.get('#withOptGroup > .css-yk16xz-control > .css-1hwfws3').click();
-  //   cy.get('#react-select-5-option-3').click();
-  // });
+  it('Selecionar Widgets e depois em Select Menu e testar se a opção Select value funciona', ()=>{
+    cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+    cy.get(':nth-child(4) > .element-list > .menu-list > #item-8').click();
+    cy.get('#withOptGroup > .css-yk16xz-control > .css-1hwfws3').click();
+    cy.get('#react-select-5-option-0-0').click();
+    cy.wait(600);
+    cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+    cy.get(':nth-child(4) > .element-list > .menu-list > #item-8').click();
+    cy.get('#withOptGroup > .css-yk16xz-control > .css-1hwfws3').click();
+    cy.get('#react-select-5-option-0-1').click();
+    cy.wait(600);
+    cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+    cy.get(':nth-child(4) > .element-list > .menu-list > #item-8').click();
+    cy.get('#withOptGroup > .css-yk16xz-control > .css-1hwfws3').click();
+    cy.get('#react-select-5-option-1-0').click();
+    cy.wait(600);
+    cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+    cy.get(':nth-child(4) > .element-list > .menu-list > #item-8').click();
+    cy.get('#withOptGroup > .css-yk16xz-control > .css-1hwfws3').click();
+    cy.get('#react-select-5-option-1-1').click();
+    cy.wait(600);
+    cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+    cy.get(':nth-child(4) > .element-list > .menu-list > #item-8').click();
+    cy.get('#withOptGroup > .css-yk16xz-control > .css-1hwfws3').click();
+    cy.get('#react-select-5-option-2').click();
+    cy.wait(600);
+    cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+    cy.get(':nth-child(4) > .element-list > .menu-list > #item-8').click();
+    cy.get('#withOptGroup > .css-yk16xz-control > .css-1hwfws3').click();
+    cy.get('#react-select-5-option-3').click();
+  });
+
+  it('Selecionar Widgets, depois em Select Menu e testar se o Select One está funcionando', ()=>{
+    cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+    cy.get(':nth-child(4) > .element-list > .menu-list > #item-8').click();
+    cy.get('#selectOne > .css-yk16xz-control > .css-1hwfws3').click();
+    cy.get('#react-select-6-option-0-0').click();
+
+    cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+    cy.get(':nth-child(4) > .element-list > .menu-list > #item-8').click();
+    cy.get('#selectOne > .css-yk16xz-control > .css-1hwfws3').click();
+    cy.get('#react-select-6-option-0-1').click();
+
+    cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+    cy.get(':nth-child(4) > .element-list > .menu-list > #item-8').click();
+    cy.get('#selectOne > .css-yk16xz-control > .css-1hwfws3').click();
+    cy.get('#react-select-6-option-0-2').click();
+
+    cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+    cy.get(':nth-child(4) > .element-list > .menu-list > #item-8').click();
+    cy.get('#selectOne > .css-yk16xz-control > .css-1hwfws3').click();
+    cy.get('#react-select-6-option-0-3').click();
+
+    cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+    cy.get(':nth-child(4) > .element-list > .menu-list > #item-8').click();
+    cy.get('#selectOne > .css-yk16xz-control > .css-1hwfws3').click();
+    cy.get('#react-select-6-option-0-4').click();
+
+    cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+    cy.get(':nth-child(4) > .element-list > .menu-list > #item-8').click();
+    cy.get('#selectOne > .css-yk16xz-control > .css-1hwfws3').click();
+    cy.get('#react-select-6-option-0-5').click();
+  });
+
+  it('Selecionar Widgets, depois em Select Menu e testar se o Multiselect drop down está funcionando', ()=>{
+    cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+    cy.get(':nth-child(4) > .element-list > .menu-list > #item-8').click();
+    cy.get(':nth-child(7) > .col-md-6 > .css-2b097c-container > .css-yk16xz-control > .css-1hwfws3').click();
+
+    cy.get('#react-select-7-option-0').click();
+
+    cy.get('#react-select-7-option-1').click();
+
+    cy.get('#react-select-7-option-2').click();
+
+    cy.get('#react-select-7-option-3').click();
+  });
+
+  it('Selecionar Widgets, depois em Select Menu e testar se o Standard multiselect está funcionando', ()=>{
+    cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+    cy.get(':nth-child(4) > .element-list > .menu-list > #item-8').click();
+    
+    cy.get('[value="volvo"]').click({ force: true },{
+      shiftKey: true,
+    });
+
+    cy.get('[value="saab"]').click({ force: true },{
+      shiftKey: true, 
+    });
+    cy.get('[value="opel"]').click({ force: true },{
+      shiftKey: true,
+    });
+
+    cy.get('[value="audi"]').click({ force: true },{
+      shiftKey: true,
+    });
+  });
+
+  it('Selecionar Alerts, Frame & Windows e testar se o Alerts está funcionando', ()=>{
+    cy.get(':nth-child(3) > .group-header > .header-wrapper > .header-text').click();
+    cy.get(':nth-child(3) > .element-list > .menu-list > #item-1').click();
+    cy.get('#alertButton').click();
+    cy.get('#alertButton').click();
+    cy.get('#confirmButton').click();
+  });
+
 })
