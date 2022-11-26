@@ -145,4 +145,72 @@ describe('teste', () => {
     cy.get('#showLargeModal').click();
     cy.get('#closeLargeModal').click();
   });
+
+  it('Selecionar Widgets e testar se Accordian está funcionando', ()=>{
+    cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+    cy.get(':nth-child(4) > .element-list > .menu-list > #item-0').click();
+    cy.get('#section1Heading').click();
+    cy.get('#section2Heading').click();
+    cy.get('#section3Heading').click();
+  });
+
+  it('Selecionar Widgets e testar se Data Picker está mostrando a data e horário atual a partir do click', ()=>{
+    cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+    cy.get(':nth-child(4) > .element-list > .menu-list > #item-2').click();
+  });
+
+  it('Selecionar Widgets e testar se Progress Bar está funcionando a barra a partir do click no start e stop', ()=>{
+    cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+    cy.get(':nth-child(4) > .element-list > .menu-list > #item-4').click();
+    cy.get('#startStopButton').click();
+    cy.wait(3000);
+    cy.get('#startStopButton').click();
+  });
+
+  it('Selecionar Widgets e testar se funciona todas as opções de Tabs', ()=>{
+    cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+    cy.get(':nth-child(4) > .element-list > .menu-list > #item-5').click();
+    cy.get('#demo-tab-what').click();
+    cy.get('#demo-tab-origin').click();
+    cy.get('#demo-tab-use').click();
+  });
+
+  it('Selecionar Widgets e testar se o Hover da Tool tips está funcionando', ()=>{
+    cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+    cy.get(':nth-child(4) > .element-list > .menu-list > #item-6').click();
+    cy.get('#toolTipButton').trigger('mouseover');
+    cy.wait(600);
+    cy.get('#toolTipTextField').trigger('mouseover');
+  });
+
+  it('Selecionar Widgets e testar se o hover dos Menus está funcionando', ()=>{
+    cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+    cy.get(':nth-child(4) > .element-list > .menu-list > #item-7').click();
+    cy.get('#nav > :nth-child(1) > a').trigger('mouseover');
+    cy.get('#nav > :nth-child(2) > :nth-child(1)').trigger('mouseover');
+    cy.wait(600);
+    cy.get('#nav > :nth-child(3) > a').trigger('mouseover');
+  });
+
+  // it('Selecionar Widgets e depois em Select Menu e testar se a opção Select value funciona', ()=>{
+  //   cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+  //   cy.get(':nth-child(4) > .element-list > .menu-list > #item-8').click();
+  //   cy.get('#withOptGroup > .css-yk16xz-control > .css-1hwfws3').click();
+  //   cy.get('#react-select-5-option-0-0').click();
+  //   cy.wait(600);
+  //   cy.get('#withOptGroup > .css-yk16xz-control > .css-1hwfws3').click();
+  //   cy.get('#react-select-5-option-0-1').click();
+  //   cy.wait(600);
+  //   cy.get('#withOptGroup > .css-yk16xz-control > .css-1hwfws3').click();
+  //   cy.get('#react-select-5-option-1-0').click();
+  //   cy.wait(600);
+  //   cy.get('#withOptGroup > .css-yk16xz-control > .css-1hwfws3').click();
+  //   cy.get('#react-select-5-option-1-1').click();
+  //   cy.wait(600);
+  //   cy.get('#withOptGroup > .css-yk16xz-control > .css-1hwfws3').click();
+  //   cy.get('#react-select-5-option-2').click();
+  //   cy.wait(600);
+  //   cy.get('#withOptGroup > .css-yk16xz-control > .css-1hwfws3').click();
+  //   cy.get('#react-select-5-option-3').click();
+  // });
 })
