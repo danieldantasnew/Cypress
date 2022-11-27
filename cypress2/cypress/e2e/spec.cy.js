@@ -69,7 +69,12 @@ describe('teste', () => {
         cy.get('#section2Heading').click();
         cy.get('#section3Heading').click();
     });
-    
+    it('Acessa Widgets e verifica se o Slide está funcionando', ()=>{
+        cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
+        cy.get(':nth-child(4) > .element-list > .menu-list > #item-3').click();	
+        cy.get('.range-slider').trigger('mousemove', 'right');
+    });
+
     it('Selecionar Widgets e testar se Data Picker está mostrando a data e horário atual a partir do click', ()=>{
         cy.get(':nth-child(4) > .group-header > .header-wrapper').click();
         cy.get(':nth-child(4) > .element-list > .menu-list > #item-2').click();
@@ -204,5 +209,89 @@ describe('teste', () => {
         cy.get('[value="audi"]').click({ force: true },{
           shiftKey: true,
         });
+    });
+
+
+    it('Acessa Interactions e verifica se o Sortable List está funcionando', ()=>{
+        cy.get(':nth-child(5) > .group-header > .header-wrapper').click();
+        cy.get(':nth-child(5) > .element-list > .menu-list > #item-0').click();
+        cy.get('.vertical-list-container > :nth-child(1)').trigger('mousedown', 15, 40);
+        cy.get('.vertical-list-container > :nth-child(2)').click();
+    });
+
+    it('Acessa Interactions e verifica se o Sortable Grid está funcionando', ()=>{
+        cy.get(':nth-child(5) > .group-header > .header-wrapper').click();
+        cy.get(':nth-child(5) > .element-list > .menu-list > #item-0').click();
+        cy.get('#demo-tab-grid').click();
+        cy.get('.create-grid > :nth-child(1)').trigger('mousedown', 15, 40);
+        cy.get('.create-grid > :nth-child(2)').click();
+    });
+
+    it('Acessa Interactions e verifica se o Selectable List está funcionando', ()=>{
+        cy.get(':nth-child(5) > .group-header > .header-wrapper').click();
+        cy.get(':nth-child(5) > .element-list > .menu-list > #item-1').click();
+        cy.get('#verticalListContainer > :nth-child(1)').click();
+        cy.get('#verticalListContainer > :nth-child(2)').click();
+        cy.get('#verticalListContainer > :nth-child(3)').click();
+        cy.get('#verticalListContainer > :nth-child(4)').click();
+    });
+
+    it('Acessa Interactions e verifica se o Selectable Grid está funcionando', ()=>{
+        cy.get(':nth-child(5) > .group-header > .header-wrapper').click();
+        cy.get(':nth-child(5) > .element-list > .menu-list > #item-1').click();
+        cy.get('#demo-tab-grid').click();
+        cy.get('#row1 > :nth-child(1)').click();
+        cy.wait(600);
+        cy.get('#row2 > :nth-child(2)').click();
+        cy.wait(600);
+        cy.get('#row1 > :nth-child(2)').click();
+        cy.wait(600);
+    });
+
+    it('Acessa Book Store Application, depois Login e verifica se o Registro funciona sem apertar no Recaptcha', ()=>{
+        cy.get(':nth-child(6) > .group-header > .header-wrapper').click();
+        cy.get(':nth-child(6) > .element-list > .menu-list > #item-0').click();
+        cy.get('#newUser').click();
+        cy.get('#firstname').type('Daniel');
+        cy.get('#lastname').type('Barboza');
+        cy.get('#userName').type('UmTeste');
+        cy.get('#password').type('UmaSenh@Aleator!a');
+        cy.get('[style="width: 304px; height: 78px;"] > div > iframe').click();
+        cy.get('#register').click();
+    });
+
+    it('Acessa Book Store Application, depois Login e verifica se o Login funciona sem ter sido registrado antes', ()=>{
+        cy.get(':nth-child(6) > .group-header > .header-wrapper').click();
+        cy.get(':nth-child(6) > .element-list > .menu-list > #item-0').click();
+        cy.get('#userName').type('TESTE212');
+        cy.get('#password').type('ikfjdsikojfsd');
+        cy.get('#login').click();
+    });
+
+    it('Deve não concluir o registro e cancelar', () => {
+        cy.visit('https://www.globalsqa.com/angularJs-protractor/registration-login-example/#/login');
+        cy.get('.btn-link').click();
+        cy.get('#firstName').type('DaniDani');
+        cy.get('#Text1').type('Testststs');
+        cy.get('#username').type('TesteDeLeve');
+        cy.get('#password').type('ksfldsjflsdjfls');
+        cy.get('.btn-link').click();  
+    });
+
+    it('Deve fazer e concluir o registro', () => {
+        cy.get('.btn-link').click();
+        cy.get('#firstName').type('DaniDani');
+        cy.get('#Text1').type('Testststs');
+        cy.get('#username').type('TesteDeLeve');
+        cy.get('#password').type('ksfldsjflsdjfls');
+        cy.get('.btn-primary').click();
+        cy.wait(600);
+    });
+
+    it('Deve fazer o login que foi registrado', () => {
+        cy.wait(600);
+        cy.get('#username').type('TesteDeLeve');
+        cy.get('#password').type('ksfldsjflsdjfls');
+        cy.get('.btn-primary').click();	
     });
 })
