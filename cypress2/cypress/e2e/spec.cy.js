@@ -3,15 +3,25 @@ describe('teste', () => {
         cy.visit('https://demoqa.com/');
         cy.scrollTo(0, 500);
     });
-    
+//teste e2e
+    it('Deve editar um elemnto de web tables', ()=>{
+        cy.get(':nth-child(1) > :nth-child(1) > .card-up').click();
+        cy.get(':nth-child(1) > .element-list > .menu-list > #item-3').click();
+        cy.get('#edit-record-3 > svg').click();
+        cy.get('#lastName').type(' Teste'); 
+        cy.get('#submit').click();
+    });
+
     it('Selecionar Alerts, Frame & Windows e testar se o Alerts está funcionando', ()=>{
-        cy.get(':nth-child(3) > :nth-child(1) > .avatar').click();
+        cy.get(':nth-child(3) > .group-header > .header-wrapper > .header-text').click();
+        cy.wait(200);
         cy.get(':nth-child(3) > .element-list > .menu-list > #item-1').click();
         cy.get('#alertButton').click();
         cy.get('#alertButton').click();
         cy.get('#confirmButton').click();
     });
 
+//teste e2e
     it('Selecionar a opção forms e preencher os dados', ()=>{
         cy.get(':nth-child(2) > .group-header > .header-wrapper').click();
         cy.wait(200);
@@ -273,25 +283,60 @@ describe('teste', () => {
         cy.get('.btn-link').click();
         cy.get('#firstName').type('DaniDani');
         cy.get('#Text1').type('Testststs');
-        cy.get('#username').type('TesteDeLeve');
-        cy.get('#password').type('ksfldsjflsdjfls');
+        cy.get('#username').type('dd');
+        cy.get('#password').type('dd');
         cy.get('.btn-link').click();  
     });
-
+//teste e2e
     it('Deve fazer e concluir o registro', () => {
         cy.get('.btn-link').click();
         cy.get('#firstName').type('DaniDani');
         cy.get('#Text1').type('Testststs');
-        cy.get('#username').type('TesteDeLeve');
-        cy.get('#password').type('ksfldsjflsdjfls');
+        cy.get('#username').type('dd');
+        cy.get('#password').type('dd');
         cy.get('.btn-primary').click();
         cy.wait(600);
     });
-
+//teste e2e
     it('Deve fazer o login que foi registrado', () => {
         cy.wait(600);
-        cy.get('#username').type('TesteDeLeve');
-        cy.get('#password').type('ksfldsjflsdjfls');
+        cy.get('#username').type('dd');
+        cy.get('#password').type('dd');
         cy.get('.btn-primary').click();	
+        cy.wait(6000);
+        cy.get('.btn').click();
+    });
+//teste e2e
+    it('Deve fazer o login, deletar o usuário e tentar fazer login novamente', () => {
+        cy.get('.btn-link').click();
+        cy.get('#firstName').type('DaniDani');
+        cy.get('#Text1').type('Testststs');
+        cy.get('#username').type('dd');
+        cy.get('#password').type('dd');
+        cy.get('.btn-primary').click();
+        cy.wait(6000);
+        cy.get('#username').type('dd');
+        cy.get('#password').type('dd');
+        cy.get('.btn-primary').click();	
+        cy.wait(6000);
+    	cy.get('.ng-binding > a').click();
+	    cy.wait(600);
+        cy.get('.btn').click();
+        cy.get('#username').type('dd');
+        cy.get('#password').type('dd');
+        cy.get('.btn-primary').click();
+    });
+//teste e2e
+    it('Deve adicionar os produtos no carrinho e aumentar a quantidade de um produto', () => {
+    cy.visit('https://react-shopping-cart-67954.firebaseapp.com/');
+    cy.get('.dwOYCh > .sc-124al1g-0').click();
+    cy.get('.bCLaRj > .sc-124al1g-0').click();
+    cy.get(':nth-child(1) > .sc-11uohgb-4 > div > :nth-child(2)').click();
+    cy.get('.sc-1h98xa9-11').click();
+    cy.get('.sc-1h98xa9-0 > span').click();
+    });
+
+    it('Deve mostrar apenas produtos de tamanho ML', () => {
+        cy.get(':nth-child(5) > label > .checkmark').click();
     });
 })
