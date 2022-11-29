@@ -4,7 +4,7 @@ describe('teste', () => {
         cy.scrollTo(0, 500);
     });
 //teste e2e
-    it('Deve editar um elemnto de web tables', ()=>{
+    it('Deve editar um elemento de web tables', ()=>{
         cy.get(':nth-child(1) > :nth-child(1) > .card-up').click();
         cy.get(':nth-child(1) > .element-list > .menu-list > #item-3').click();
         cy.get('#edit-record-3 > svg').click();
