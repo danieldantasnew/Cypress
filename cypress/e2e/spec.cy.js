@@ -52,7 +52,7 @@ describe('teste', () => {
     cy.get('#delete-record-1 > svg > path').click();
   });
 
-  it('Deve editar um elemnto de web tables', ()=>{
+  it('Deve editar um elemento de web tables', ()=>{
     cy.get('#edit-record-4 > svg').click();
     cy.get('#lastName').type(' Teste'); 
     cy.wait(800);  
